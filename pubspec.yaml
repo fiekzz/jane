@@ -1,6 +1,6 @@
 name: jane
 description: "A debugging tool for developers to manage environments, page and widget view testing."
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/fiekzz/jane
 
 environment:

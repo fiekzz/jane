@@ -43,10 +43,12 @@ class MyApp extends StatelessWidget {
         builder: (context) {
           return const MyHomePage(title: 'Flutter Demo Home Page');
         },
-        // Create your own view by adding the environment variables
-        // - Api environments
-        // - Ongoing testing pages
-        janeContent: Text('Test'),
+        contentNavigator: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => DebugPage()),
+          );
+        },
       ),
     );
   }
