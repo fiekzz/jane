@@ -1,3 +1,4 @@
+import 'package:example/debug_page.dart';
 import 'package:flutter/material.dart';
 import 'package:jane/jane.dart';
 
@@ -19,7 +20,12 @@ class MyApp extends StatelessWidget {
         builder: (context) {
           return const MyHomePage(title: 'Flutter Demo Home Page');
         },
-        janeContent: Text('Test'),
+        contentNavigator: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => DebugPage()),
+          );
+        },
       ),
     );
   }

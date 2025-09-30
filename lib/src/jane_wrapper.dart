@@ -10,14 +10,17 @@ class JaneWrapper extends StatefulWidget {
   final double? floatingHeight;
   final bool avoidKeyboard;
 
+  final Function contentNavigator;
+
   final Widget Function(BuildContext context) builder;
 
-  final Widget janeContent;
+  // final Widget janeContent;
 
   const JaneWrapper({
     super.key,
     required this.builder,
-    required this.janeContent,
+    // required this.janeContent,
+    required this.contentNavigator,
     this.initialCorner = PIPViewCorner.topRight,
     this.floatingWidth,
     this.floatingHeight,
@@ -45,10 +48,8 @@ class JaneWrapperState extends State<JaneWrapper>
 
   void _openContent() {
     dismissKeyboard(context);
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (_) => widget.janeContent),
-    );
+
+    widget.contentNavigator();
   }
 
   final Size buttonDimension = Size(30, 30);
