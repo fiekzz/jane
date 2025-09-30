@@ -170,11 +170,11 @@ class JaneControllerState extends State<JaneController>
         final calculatedOffset = _offsets[_corner];
 
         // BoxFit.cover
-        final widthRatio = floatingWidth / width;
-        final heightRatio = floatingHeight / height;
-        final scaledDownScale = widthRatio > heightRatio
-            ? floatingWidgetSize.width / fullWidgetSize.width
-            : floatingWidgetSize.height / fullWidgetSize.height;
+        // final widthRatio = floatingWidth / width;
+        // final heightRatio = floatingHeight / height;
+        // final scaledDownScale = widthRatio > heightRatio
+        //     ? floatingWidgetSize.width / fullWidgetSize.width
+        //     : floatingWidgetSize.height / fullWidgetSize.height;
 
         return Stack(
           children: <Widget>[
@@ -218,10 +218,10 @@ class JaneControllerState extends State<JaneController>
                     begin: fullWidgetSize.height,
                     end: floatingWidgetSize.height,
                   ).transform(toggleFloatingAnimationValue);
-                  final scale = Tween<double>(
-                    begin: 1,
-                    end: scaledDownScale,
-                  ).transform(toggleFloatingAnimationValue);
+                  // final scale = Tween<double>(
+                  //   begin: 1,
+                  //   end: scaledDownScale,
+                  // ).transform(toggleFloatingAnimationValue);
                   return Positioned(
                     left: floatingOffset.dx,
                     top: floatingOffset.dy,

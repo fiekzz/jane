@@ -1,6 +1,6 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:jane/src/jane_controller.dart';
-import 'package:jane/src/jane_page.dart';
 
 import 'dismiss_keyboard.dart';
 
@@ -47,9 +47,7 @@ class JaneWrapperState extends State<JaneWrapper>
     dismissKeyboard(context);
     Navigator.push(
       context,
-      MaterialPageRoute(
-        builder: (_) => JanePage(janePager: widget.janeContent),
-      ),
+      MaterialPageRoute(builder: (_) => widget.janeContent),
     );
   }
 
@@ -61,12 +59,14 @@ class JaneWrapperState extends State<JaneWrapper>
       avoidKeyboard: widget.avoidKeyboard,
       bottomWidget: _bottomWidget,
       onTapTopWidget: _openContent,
-      topWidget: IgnorePointer(
-        ignoring: false,
-        child: Center(
-          child: Icon(Icons.bug_report, color: Colors.red, size: 30),
-        ),
-      ),
+      topWidget: kDebugMode
+          ? IgnorePointer(
+              ignoring: false,
+              child: Center(
+                child: Icon(Icons.bug_report, color: Colors.red, size: 30),
+              ),
+            )
+          : null,
       floatingHeight: buttonDimension.height,
       floatingWidth: buttonDimension.width,
       initialCorner: widget.initialCorner,

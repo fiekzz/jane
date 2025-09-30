@@ -1,7 +1,7 @@
 name: jane
-description: "A new Flutter package project."
-version: 0.0.1
-homepage:
+description: "A debugging tool for developers to manage environments, page and widget view testing."
+version: 0.0.2
+homepage: https://github.com/fiekzz/jane
 
 environment:
   sdk: ^3.9.2
@@ -10,8 +10,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-  pip_view: ^0.9.7
 
 dev_dependencies:
   flutter_test:

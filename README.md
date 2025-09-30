@@ -11,29 +11,49 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/to/develop-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A flutter debugging tool for the developers to manage the environments and widgets view testing.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- A picture in picture button view which inspires from Flutter PIPView
+https://github.com/lslv1243/pip_view
+- The button will open dev environment page
 
 ## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+```
+flutter pub get jane
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Add Jane wrapper at the top of home
 
 ```dart
-const like = 'sample';
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      ),
+      home: JaneWrapper(
+        builder: (context) {
+          return const MyHomePage(title: 'Flutter Demo Home Page');
+        },
+        // Create your own view by adding the environment variables
+        // - Api environments
+        // - Ongoing testing pages
+        janeContent: Text('Test'),
+      ),
+    );
+  }
+}
 ```
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+More information can be get from the original github of the PIPView
+https://github.com/lslv1243/pip_view
